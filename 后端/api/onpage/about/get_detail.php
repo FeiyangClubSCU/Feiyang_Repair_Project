@@ -4,7 +4,7 @@ $get_status_seid = $posts['seid'];  //获取会话号码
 $get_status_pnum = $posts['pnum'];  //获取手机号码
 $get_status_path = dirname(dirname(__FILE__));
 include $get_status_path.'/../module/database.php';
-include $get_status_path.'/../module/database.php';
+//include $get_status_path.'/../module/database.php';
 /*----------------------------------------------------------------------------------
 
                                    *获取用户信息*

@@ -129,26 +129,26 @@ else{
                     //-------------------------------获取订单的用户和技工信息，写入系统日志----------------------------------------
                     echo "[".date("Y-m-d h:m:s")."] "."[飞扬维修]当前选中技工：".$exc_minute_row2['wxid']  ."<br />\n";
                     if(db_getc("fy_users","id",$exc_minute_row1['urid'],"vips")==1){      //按照会员写入订单
-                        $exc_weekly_tstr='order_am1';
+                        $exc_weekly_tstk='order_am1';
                         $exc_weekly_ttip='a';
                         $exc_daysly_tstr='order_vip';
                     }
                     else{                                                                 //按照普通用户处理
-                        $exc_weekly_tstr='order_am2';
+                        $exc_weekly_tstk='order_am2';
                         $exc_weekly_ttip='b';
-                        $exc_weekly_tstr='order_nop';
+                        $exc_daysly_tstr='order_nop';
                     }
                         
                     $exc_weekly_time='w'.$exc_weekly_ttip.strval(date("w",time()));       //获取每周统计键名
                     $exc_weekly_temp=db_getc("fy_datas","name",$exc_weekly_time,"data")+1;//获取每周统计数据
-                    $exc_weekly_alls=db_getc("fy_datas","name",$exc_weekly_tstr,"data")+1;//获取每周汇总数据
+                    $exc_weekly_alls=db_getc("fy_datas","name",$exc_weekly_tstk,"data")+1;//获取每周汇总数据
                     $exc_daysly_alls=db_getc("fy_datas","name",$exc_daysly_tstr,"data")+1;//获取每天报修数据
                     $exc_months_alls=db_getc("fy_datas","name","month_num"     ,"data")+1;//获取总共报修数据
                     $exc_totals_alls=db_getc("fy_datas","name","total_num"     ,"data")+1;//获取总共报修数据
                     db_putc("fy_datas","name","total_num"     ,"data",$exc_totals_alls);  //写入总共报修数据
                     db_putc("fy_datas","name","month_num"     ,"data",$exc_months_alls);  //写入总共报修数据
                     db_putc("fy_datas","name",$exc_daysly_tstr,"data",$exc_daysly_alls);  //写入每天报修数据
-                    db_putc("fy_datas","name",$exc_weekly_tstr,"data",$exc_weekly_alls);  //写入每周汇总数据
+                    db_putc("fy_datas","name",$exc_weekly_tstk,"data",$exc_weekly_alls);  //写入每周汇总数据
                     db_putc("fy_datas","name",$exc_weekly_time,"data",$exc_weekly_temp);  //写入每周汇总数据
                     //-----------------------------------设置用户和技工当前状态------------------------------------------------
                     db_putc("fy_users","wxid",$exc_minute_row2['wxid'],"flag",1);         //写入技工状态-忙碌
@@ -216,7 +216,7 @@ $exc_minute_orde=db_alls('fy_order');
 while($exc_minute_row1=$exc_minute_orde->fetch_assoc()){
     if((strtotime(date("Y-m-d h:i"))-strtotime($exc_minute_row1['time']))/86400
        >=db_getc("fy_confs","name","Global_Time","data")
-    &&  $exc_minute_row1["flag"]<=2){
+    &&  $exc_minute_row1["flag"]<2){
         db_putc("fy_order","tbid",$exc_minute_row1['tbid'],"flag",5);//设置订单状态
         db_putc("fy_users",  "id",$exc_minute_row1['urid'],"flag",0);//设置用户状态
         db_putc("fy_users","wxid",$exc_minute_row1['wxid'],"flag",0);//设置技工状态

@@ -1,10 +1,11 @@
 <?php
 $posts = $_GET;
+$get_verify_path = dirname(dirname(__FILE__));
 include $get_verify_path.'/../module/getnewid.php';
-include $get_verify_path   .'/module/sendtext.php';
+include $get_verify_path.'/module/sendtext.php';
 $get_verify_seid = $posts['seid'];  //获取会话号码
 $get_verify_pnum = $posts['pnum'];  //获取手机号码
-$get_verify_path = dirname(dirname(__FILE__));
+
 /*----------------------------------------------------------------------------------
 
                                    *提交维修表单*

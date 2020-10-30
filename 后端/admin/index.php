@@ -21,7 +21,7 @@
                                     <strong class="text-uppercase">今日报修</strong>
                                     <span>Today Order</span>
                                     <div class="count-number">
-                                        <?php echo $datas_arry[5]+$datas_arry[6]; ?></div>
+                                        <?php echo intval($datas_arry[5])+intval($datas_arry[6]); ?></div>
                                 </div>
                             </div>
                         </div>
@@ -271,35 +271,123 @@
             <section class="statistics">
                 <div class="container-fluid">
                     <div class="row d-flex">
-                        <div style="width:150%;" class="col-lg-3 col-md-6">
+                        <div style="width:100%;" class="col-lg-2 col-md-6">
                             <div style="width:100%;!important" class="card project-progress">
                                 <h2 class="text-primary">今日报修</h2>
                                 <p>今日报修情况分布</p>
+                                <br />
                                 <div class="pie-chart">
-                                    <canvas id="pieChart" width="300" height="300"></canvas>
+                                    <canvas id="days_pieChart" width="300" height="300"></canvas>
+                                </div>
+                                <br />
+                                <h3 class="h4 display">今日已报修</h3>
+                                
+                                <div class="progress">
+                                    <div role="progressbar" style="width: <?php
+                                        if ( db_getc("fy_confs","name","Global_Days","data") == 0) echo 0;
+                                        else echo 100*($datas_arry[5]+$datas_arry[6])/intval(db_getc("fy_confs","name","Global_Days","data"));
+                                    ?>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar bg-primary">
+                                    </div>
+                                </div>
+                                <div class="page-statistics d-flex justify-content-between">
+                                    <div class="page-statistics-left">
+                                        <span>今日报修配额：</span>
+                                        <strong>
+                                            <?php echo db_getc("fy_confs","name","Global_Days","data"); ?></strong>
+                                    </div>
+                                    <div class="page-statistics-right">
+                                        <span>使用占比</span>
+                                        <strong>
+                                            <?php 
+                                                if(db_getc("fy_confs","name","Global_Days","data")==0) 
+                                                    echo 0; 
+                                                else 
+                                                    echo intval((100*$datas_arry[5]+100*$datas_arry[6])/db_getc("fy_confs","name","Global_Days","data")); 
+                                            ?>%
+                                        </strong>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="card data-usage">
-                                <h2 class="text-primary">本月报修</h2>
+                        <div style="width:100%;" class="col-lg-2 col-md-6">
+                            <div style="width:100%;!important" class="card project-progress">
+                                <h2 class="text-primary">本周报修</h2>
+                                <p>本周报修情况分布</p>
                                 <br />
-                                <br />
-                                <small>计划占比&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 占用/总共</small>
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-sm-6">
-                                        <strong>
-                                            <?php $index_if_datas=db_getc("fy_confs","name","Global_Mont","data");if($index_if_datas==0)echo 0; else echo round( 100*$datas_arry[2] / $index_if_datas ); ?>%</strong>
-                                        <!---<div id="progress-circle" class="d-flex align-items-center justify-content-center"></div>---></div>
-                                    <div class="col-sm-6">
-                                        <strong class="text-primary">
-                                            <?php echo $datas_arry[2]; ?>/
-                                                <?php echo db_getc("fy_confs","name","Global_Mont","data"); ?></strong>
-                                        <span></span>
-                                    </div>
+                                <div class="pie-chart">
+                                    <canvas id="week_pieChart" width="300" height="300"></canvas>
                                 </div>
                                 <br />
+                                <h3 class="h4 display">本周已报修</h3>
+                                
+                                <div class="progress">
+                                    <div role="progressbar" style="width: <?php
+                                        if ( db_getc("fy_confs","name","Global_Week","data") == 0) echo 0;
+                                        else echo 100*($datas_arry[5]+$datas_arry[6])/intval(db_getc("fy_confs","name","Global_Week","data"));
+                                    ?>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar bg-primary">
+                                    </div>
+                                </div>
+                                <div class="page-statistics d-flex justify-content-between">
+                                    <div class="page-statistics-left">
+                                        <span>本周报修配额：</span>
+                                        <strong>
+                                            <?php echo db_getc("fy_confs","name","Global_Week","data"); ?></strong>
+                                    </div>
+                                    <div class="page-statistics-right">
+                                        <span>使用占比</span>
+                                        <strong>
+                                            <?php 
+                                                if(db_getc("fy_confs","name","Global_Week","data")==0) 
+                                                    echo 0; 
+                                                else 
+                                                    echo intval((100*$datas_arry[3]+100*$datas_arry[4])/db_getc("fy_confs","name","Global_Week","data")); 
+                                            ?>%
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:100%;" class="col-lg-2 col-md-6">
+                            <div style="width:100%;!important" class="card project-progress">
+                                <h2 class="text-primary">本月报修</h2>
+                                <p>本月报修情况分布</p>
                                 <br />
+                                <div class="pie-chart">
+                                    <canvas id="mont_pieChart" width="300" height="300"></canvas>
+                                </div>
+                                <br />
+                                <h3 class="h4 display">本月已报修</h3>
+                                
+                                <div class="progress">
+                                    <div role="progressbar" style="width: <?php
+                                        if ( db_getc("fy_confs","name","Global_Week","data") == 0) echo 0;
+                                        else echo 100*($datas_arry[5]+$datas_arry[6])/intval(db_getc("fy_confs","name","Global_Week","data"));
+                                    ?>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar bg-primary">
+                                    </div>
+                                </div>
+                                <div class="page-statistics d-flex justify-content-between">
+                                    <div class="page-statistics-left">
+                                        <span>本月报修配额：</span>
+                                        <strong>
+                                            <?php echo db_getc("fy_confs","name","Global_Mont","data"); ?></strong>
+                                    </div>
+                                    <div class="page-statistics-right">
+                                        <span>使用占比</span>
+                                        <strong>
+                                            <?php 
+                                                if(db_getc("fy_confs","name","Global_Mont","data")==0) 
+                                                    echo 0; 
+                                                else 
+                                                    echo intval((100*$datas_arry[2])/db_getc("fy_confs","name","Global_Mont","data")); 
+                                            ?>%
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="col-lg-2">
+                            <div  class="card data-usage">
                                 <h2 class="text-primary">总共报修</h2>
                                 <div class=" income text-center">
                                     <br />
@@ -309,36 +397,63 @@
                                     <div class="number">
                                         <?php echo $datas_arry[1]; ?></div>
                                 </div>
+                                <br /><br /><br />
+                                <h2 class="text-primary">人均接单</h2>
+                                <div class=" income text-center">
+                                    <br />
+                                    <div class="icon">
+                                        #
+                                    </div>
+                                    <div class="number">
+                                        <?php echo round($datas_arry[1]/$datas_arry[8],2); ?></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="card user-activity">
-                                <h2 class="text-primary">本周配额</h2>
-                                <div class="number">
-                                    <?php echo $datas_arry[3]+$datas_arry[4]; ?></div>
-                                <br />
-                                <br />
-                                <h3 class="h4 display">本周已报修</h3>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 
-                                    <?php
-                                    if(db_getc("fy_confs","name","Global_Week","data")==0) echo 0;
-                                    else echo 100*($datas_arry[3]+$datas_arry[4])/intval(db_getc("fy_confs","name","Global_Week","data"));
-                                    ?>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar bg-primary">
+                        <br />
+                        <div  class="col-lg-2">
+                            <div class="card data-usage">
+                                <h2 class="text-primary">总反馈数</h2>
+                                <div class=" income text-center">
+                                    <br />
+                                    <div class="icon">
+                                        <i class="icon-line-chart"></i>
                                     </div>
+                                    <div class="number">
+                                        <?php echo $datas_arry[19]; ?></div>
                                 </div>
-                                <br />
-                                <br />
-                                <div class="page-statistics d-flex justify-content-between">
-                                    <div class="page-statistics-left">
-                                        <span>本周报修配额</span>
-                                        <strong>
-                                            <?php echo db_getc("fy_confs","name","Global_Week","data"); ?></strong>
+                                <br /><br /><br />
+                                <h2 class="text-primary">人均反馈</h2>
+                                <div class=" income text-center">
+                                    <br />
+                                    <div class="icon">
+                                        %
                                     </div>
-                                    <div class="page-statistics-right">
-                                        <span>使用占比</span>
-                                        <strong>
-                                            <?php if(db_getc("fy_confs","name","Global_Week","data")==0) echo 0; else echo (100*$datas_arry[3]+$datas_arry[4])/db_getc("fy_confs","name","Global_Week","data"); ?>%</strong></div>
+                                    <div class="number">
+                                        <?php echo round($datas_arry[19]/$datas_arry[18]*100,2); ?></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div  class="col-lg-2">
+                            <div class="card data-usage">
+                                <h2 class="text-primary">总会员数</h2>
+                                <div class=" income text-center">
+                                    <br />
+                                    <div class="icon">
+                                        <i class="icon-line-chart"></i>
+                                    </div>
+                                    <div class="number">
+                                        <?php echo $datas_arry[18]; ?></div>
+                                </div>
+                                <br /><br /><br />
+                                <h2 class="text-primary">会员占比</h2>
+                                <div class=" income text-center">
+                                    <br />
+                                    <div class="icon">
+                                        %
+                                    </div>
+                                    <div class="number">
+                                        <?php echo round($datas_arry[18]/$datas_arry[7]*100,2); ?></div>
                                 </div>
                             </div>
                         </div>
@@ -431,21 +546,48 @@
                 // ------------------------------------------------------- //
                 // Pie Chart
                 // ------------------------------------------------------ //
-                var PIECHART = $('#pieChart');
-                var myPieChart = new Chart(PIECHART, {
-                    type: 'doughnut',
+                var days_PIECHART = $('#days_pieChart');
+                var days_myPieChart = new Chart(days_PIECHART, {
+                    type: 'pie',
                     data: {
                         labels: ["会员", "非会员", ],
                         datasets: [{
                             data: [ <?php echo $datas_arry[5]; ?>, 
                                     <?php echo $datas_arry[6]; ?>, 0],
                             borderWidth: [1, 1],
-                            backgroundColor: [brandPrimary, "rgba(75,192,192,1)", "#FFCE56"],
-                            hoverBackgroundColor: [brandPrimary, "rgba(75,192,192,1)", "#FFCE56"]
+                            backgroundColor: ["rgba(42,206,248,1)", "rgba(180,205,205,1)"],
+                            hoverBackgroundColor: ["rgba(42,206,248,0.7)", "rgba(180,205,205,0.7)"]
                         }]
                     }
                 });
-
+                var week_PIECHART = $('#week_pieChart');
+                var week_myPieChart = new Chart(week_PIECHART, {
+                    type: 'bar',
+                    data: {
+                        labels: ["会员", "非会员", ],
+                        datasets: [{
+                            data: [ <?php echo $datas_arry[3]; ?>, 
+                                    <?php echo $datas_arry[4]; ?>, 0],
+                            borderWidth: [1, 1],
+                            backgroundColor: ["rgba(34,255,167,1)", "#F0A431"],
+                            hoverBackgroundColor: ["rgba(34,255,167,1)", "#F0A431"]
+                        }]
+                    }
+                });
+                var mont_PIECHART = $('#mont_pieChart');
+                var mont_myPieChart = new Chart(mont_PIECHART, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ["已使用","可分配"],
+                        datasets: [{
+                            data: [ <?php echo $datas_arry[2]; ?>,
+                                    <?php echo db_getc("fy_confs","name","Global_Mont","data")-$datas_arry[2]; ?>],
+                            borderWidth: [1, 1],
+                            backgroundColor: ["rgba(145,145,145,1)","rgba(71,219,71,1)"],
+                            hoverBackgroundColor: ["rgba(145,145,145,1)","rgba(71,219,71,1)"]
+                        }]
+                    }
+                });
             });</script>
     </body>
 
