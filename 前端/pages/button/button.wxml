@@ -1,0 +1,6 @@
+<view>
+<image  animation='{{animationAsk}}' class="img" src="https://fix.fyscu.com/api/images/weixins/wen.png" mode="widthFix"  style="z-index:99" bindtap="ask"></image>
+<!-- <image  animation='{{animationPlus}}' class="img" src="https://fix.fyscu.com/api/images/weixins/add.png"  mode="widthFix" style="z-index:100" bindtap="showOrHide"></image>
+<image  animation='{{animationAnswer}}' class="img" src="https://fix.fyscu.com/api/images/weixins/huida.png" mode="widthFix"  style="z-index:98" bindtap="answer"></image>
+<view class="img" animation='{{animationAnswer}}'  style="background-image:url(https://fix.fyscu.com/api/images/weixins/huida.png);" style="z-index:98" bindtap="answer"></view> -->
+</view>

@@ -1,0 +1,100 @@
+<!--pages/history/history.wxml-->
+
+<view class="garybc">
+	<menu></menu>
+	<view class="bluecard" style="height:170rpx">
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_2.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_1.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_3.png" mode="widthFix" class="wave1"></image>
+		</view>
+	</view>
+
+	<!-- 白色卡片 -->
+	<view class="whitecard1" style="background:{{history.length == 0? '#ffffff':'#f5f6fa' }}">
+		<!-- 接单提醒 -->
+		<view class="colcenter" style="height:120rpx">
+			<text class="blackfont2" wx:if="{{history.length != 0}}">您的历史维修记录</text>
+			<text class="blackfont2" wx:elif="{{history.length == 0}}" >您暂时没有维修订单噢~</text>
+		</view>
+		<view wx:if="{{history.length == 0}}">
+			<image src="https://fix.fyscu.com/api/images/weixins/undraw_empty_street_sfxm (1).png" mode="widthFix" style="wdith:750rpx;margin-top:200rpx"></image>
+		</view>
+
+		<view class="colcenter list">
+			<!-- 订单卡片 -->
+			<view class="colcenter listcard " wx:for="{{history}}" wx:key="tbid">
+				<view class="card rowcenter " style="width:100%;">
+					<view class="solids-right colcenter" style="width:40%;height:90%">
+						<!-- <image style="height:65%;" mode="aspectFit" src="https://fix.fyscu.com/api/images/weixins/repairman.png"></image> -->
+						<view class="rowcenter" style="height:110rpx;width:110rpx;border-radius: 50%;overflow: hidden;">
+							<image mode="aspectFill" style="width:100%;height:100%" src="{{item.txtp}}"></image>
+
+						</view>
+
+						<view style="width:90%;height:20%;font-size:40rpx" class="blackfont1">{{item.name}}</view>
+					</view>
+					<view style="width:60%;height:90%;padding:15rpx;" class="rowcenter">
+						<view style="width:50%;align-items: flex-start; " class="colcenter">
+							<!-- 设备类型 -->
+							<view class="colcenter" style="width:100%">
+								<view class="cu-tag line-cyan round ">设备类型</view>
+								<text class="text">{{item.sbzl}}</text>
+							</view>
+							<!-- 设备品牌 -->
+							<view class="colcenter" style="width:100%">
+								<view class="cu-tag line-cyan round ">设备品牌</view>
+								<view>{{item.dnpp}}</view>
+								<!-- 时间 -->
+								<view class="colcenter" style="width:100%">
+									<view class="cu-tag line-cyan round ">报修时间</view>
+									<view class="textoverflow">{{item.time}}</view>
+								</view>
+							</view>
+						</view>
+						<view class="colcenter" style="width:50%;height:100%; justify-content: space-between;">
+							<view class="rowcenter bottomicon">
+								<block wx:if="{{item.flag  == '2'}}">
+									<view class="text-grey">订单已完成</view>
+								</block>
+								<block wx:if="{{item.flag == '1'}}">
+									<view class="text-grey">订单进行中</view>
+								</block>
+								<block wx:if="{{item.flag == '3'}}">
+									<view class="text-grey">用户取消订单</view>
+								</block>
+								<block wx:elif="{{item.flag == '0'}}">
+									<view class="text-grey">等待接单</view>
+								</block>
+								<block wx:elif="{{item.flag == '4'}}">
+									<view class="text-grey">技术员关闭订单</view>
+								</block>
+								<block wx:elif="{{item.flag == '5'}}">
+									<view class="text-grey">目前系统已关闭</view>
+								</block>
+							</view>
+							<button class="cu-btn round line-blue" bindtap="detail" data-infTbid="{{item.tbid}}">查看详情</button>
+						</view>
+					</view>
+
+
+					<!-- <button class=""="detal_btn">查看详情</button> -->
+				</view>
+				<!-- <view class="colcenter" style="width:100% ;">
+					<view class="rowcenter bottomicon" >
+						<text>订单完成</text>
+						<text class="cuIcon-right" style="margin-left:30rpx"></text>
+					</view>
+				</view> -->
+			</view>
+
+
+		</view>
+
+	</view>
+
+</view>

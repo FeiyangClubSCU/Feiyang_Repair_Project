@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-toast":"../../dist/toast/index"
+  },
+  "navigationBarTitleText": "我要提问"
+}

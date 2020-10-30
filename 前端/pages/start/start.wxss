@@ -1,0 +1,56 @@
+/* pages/welcome/welcome.wxss */
+.trancard{
+  width: 90%;
+  height: 80%;
+
+  background:#f5f6fa;
+  box-sizing: border-box;
+  font-family: 苹方;
+  font-style: normal;
+  font-weight: normal;
+  padding: 25rpx;
+  text-align: left;
+  border-radius:14px ;
+  color: rgba(0, 0, 0, 0.49);
+  margin-top: 40rpx;
+}
+.text{
+  font-size:32rpx;
+  font-family: 苹方;
+font-style: normal;
+font-weight: normal;
+
+text-align: justify;
+color: #000000;
+
+}
+.fixicon{
+  position: absolute;
+  top: -150rpx;
+  width: 30%;
+}
+
+.font{
+  font-family: SimHei;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: -1.7px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+.font1{
+  font-family: 苹方;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: -1.7px;
+  margin-bottom: 25rpx;
+  color: #f5f6fa;
+}

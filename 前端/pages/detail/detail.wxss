@@ -1,0 +1,101 @@
+/* pages/historydetail/historydetail.wxss */
+.whitecard1 {
+  display: flex;
+  flex-direction: column;
+  padding: 44rpx 0rpx;
+  justify-content: start;
+  align-items: center;
+  position: absolute;
+  top: 50rpx;
+  width: 750rpx;
+
+
+  /* background: #FFFFFF; */
+  /* background: #f5f6fa; */
+
+}
+.toptitle{
+  color: #FFFFFF;
+  font-size: 50rpx;
+  z-index: 3;
+  font-family: 苹方;
+  padding-left: 20rpx;
+}
+.panel {
+  width: 95%;
+  padding: 20rpx 20rpx;
+  border-radius: 14px;
+  background: #FFFFFF;
+  margin-bottom: 25rpx;
+
+}
+
+.fyicon {
+  width: 60%;
+}
+
+.title {
+  width: 40%;
+  margin-right: 15rpx;
+  padding-left: 15rpx;
+  color: rgba(0, 0, 0, 0.49);
+
+}
+
+.text1 {
+  font-family: 苹方;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  width: 100%;
+  padding:15rpx;
+  text-align: left;
+  
+}
+
+.text {
+  font-family: 苹方;
+  width: 80%;
+  font-size: 33rpx;
+  text-align: right;
+  padding-right: 35rpx;
+
+}
+
+.copybtn {
+  /* position: absolute;
+  right: 60rpx; */
+  font-size: 40rpx;
+
+
+
+}
+
+.inputarea {
+  padding: 25rpx;
+  width: 100%;
+  /* background: #f1f2f6; */
+  /* border: 1px solid rgba(179, 177, 177, 0.33); */
+  box-sizing: border-box;
+}
+
+
+.swipercontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+
+}
+
+.btn {
+  width: 100%;
+  height: 100rpx;
+  font-family: SimHei;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+}

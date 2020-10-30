@@ -1,0 +1,200 @@
+
+/* 这两个是组件库的css */
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+/* 以下是常用的css */
+
+/* 灰色大背景 */
+.graybc{
+  display: flex;
+  position: absolute;
+  width: 750rpx;
+  height: 100vh;
+  background: #F7F7F7;
+  border-radius: 14px;
+
+}
+/* 白色卡片 */
+.whitecard{
+display: flex;
+flex-direction: column;
+padding: 20rpx 20rpx;
+justify-content: space-around;
+align-items: center;
+
+position: absolute;
+left: 25rpx;
+top: 150rpx;
+width: 700rpx;
+height: 968rpx;
+
+background: #FFFFFF;
+/* border: 1px solid #E5E5E5;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+border-radius: 14px;
+}
+.backgroundcard{
+  background: linear-gradient(180deg, #00A5FF 0%, rgba(0, 165, 255, 0) 100%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 300rpx;
+}
+.title{
+  text-align: center;
+  width: 100rpx;
+}
+
+/* 蓝色卡片背景 */
+.bluecard{
+position: absolute;
+width: 750rpx;
+height: 350rpx;
+background: #00A5FF;
+}
+/* 按钮通用 */
+.buttoncommon{
+background: linear-gradient(90deg, #4791FA 7.73%, rgba(20, 206, 247, 0.67) 115%), #FFFFFF;
+border-radius: 15px;
+font-family: SimHei;
+font-style: normal;
+font-weight: normal;
+font-size: 36rpx;
+line-height: 42rpx;
+
+
+
+
+
+-align: center;
+color: #FFFFFF;
+box-shadow: 0px 0px 10px rgba(88, 208, 249, 0.39);
+
+}
+/*  两个海浪的背景*/
+.wave{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+
+}
+/* 下方波浪 */
+.wave1{
+  position: absolute;
+  bottom: -250rpx;
+  width: 100%;
+
+
+
+}
+/* 统一黑色标题字体1 */
+.blackfont1{
+  font-family: 苹方;
+font-style: normal;
+font-weight: normal;
+font-size: 62rpx;
+line-height: 72rpx;
+text-align: center;
+color: #000000;
+}
+
+.blackfont2{
+  font-family: 苹方;
+font-style: normal;
+font-weight: normal;
+font-size: 40rpx;
+line-height: 32rpxpx;
+text-align: center;
+color: #000000;
+}
+.blackfont3{
+  font-family: 苹方;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color: #000000;
+  letter-spacing: 3rpx;
+  }
+/* 黑色标题2 */
+/* 统一文本灰色字体 */
+.grayfont1{
+font-family: SimHei;
+font-style: normal;
+font-weight: normal;
+font-size: 60rpx;
+line-height: 70rpx;
+text-align: center;
+
+color: rgba(0, 0, 0, 0.49);
+
+}
+.grayfont2{
+  font-family: 苹方;
+font-style: normal;
+font-weight: normal;
+font-size: 30rpx;
+line-height: 40rpx;
+text-align: center;
+color: rgba(0, 0, 0, 0.49);
+}
+/* 按钮白色字体 */
+.whitefont{
+  font-family: 苹方;
+font-style: normal;
+font-weight: normal;
+font-size: 36rpx;
+line-height: 42rpx;
+/* identical to box height */
+
+text-align: center;
+
+color: #FFFFFF;
+}
+.rowcenter{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.rowstart{
+  display: flex;
+  flex-direction:row;
+  justify-content: start;
+  align-items: center;
+
+}
+.colcenter{
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.colstart{
+  display: flex;
+  flex-direction:column;
+  justify-content: start;
+  align-items: center;
+
+}
+
+.textoverflow{
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tag {
+  color: #81f581;
+}
+
+.tec {
+  color: #fff200;
+}

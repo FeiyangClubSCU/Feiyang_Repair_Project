@@ -1,0 +1,66 @@
+<view class="garybc" style=" background:#FFFFFF;">
+	<view class="bluecard" style="height:160rpx">
+		<view class="top">
+			<image src="https://fix.fyscu.com/api/images/weixins/wave.gif" mode='scaleToFill' class="wave2"></image>
+		</view>
+	</view>
+	<!-- 头像 -->
+	<view class="image rowcenter">
+		<!-- <open-data type="userAvatarUrl"></open-data> -->
+		<!-- 此处放入用户头像 -->
+		<image src="https://fix.fyscu.com/api/images/weixins/login_boy_n- (2).png" mode="widthFix" bindtap="toLogin" wx:if="{{islogin==false}}"></image>
+		<image  mode="aspectFill" style="width:100%;height:100%" src="{{img}}" wx:if="{{islogin==true&&txtp!=0}}"></image>
+		<image  mode="aspectFill" style="width:100%;height:100%" src="https://fix.fyscu.com/api/images/weixins/选择头像.png" wx:if="{{islogin==true&&txtp==0}}"></image>
+		<!-- <image mode="aspectFill" src="https://fix.fyscu.com/api/images/weixins/undraw_feedback_h2ft.png" ></image> -->
+	</view>
+	<view class="circle"></view>
+	<view></view>
+	<!-- 名字手机号 -->
+	<view class="name_tel colcenter" style="align-items:flex-start">
+		<view class="rowstart">
+			<text class="whitefont" style="font-size: 65rpx;"   wx:if="{{islogin==true&&name}}">{{name}}</text>
+					<text class="whitefont" style="font-size: 65rpx;"   wx:if="{{islogin==true&&!name}}">去个人设置起个名字吧</text>
+			<view class="rowcenter" style=";margin-left:20rpx" wx:if="{{islogin==true}}">
+				<view class="cu-tag tec1 colcenter bg-yellow round" style="width:100rpx;height:35rpx" wx:if="{{isuser == '0'&&name}}">技术员</view>
+				<view class="cu-tag  bg-cyan  colcenter round" style="width:100rpx;height:35rpx;" wx:if="{{isuser == '1'&&name}}">用户</view>
+								<view class="cu-tag  text-yellow bg-black   round" style="width:100rpx;height:35rpx;" wx:if="{{isuser == '2'&&name}}">VIP</view>
+				<!-- <view class="cuIcon-male" style="margin-left:15rpx;color:blue;" wx:if="{{sex == '男'}}"></view>
+				<view class="cuIcon-female" style="margin-left:15rpx;color:pink" wx:if="{{sex == '女'}}"></view> -->
+			</view>
+		</view>
+		<view class="whitefont" style="font-size: 45rpx;" wx:if="{{islogin==false}}">您未登录噢</view>
+	</view>
+	<text class="tel whitefont" style="font-size:35rpx;margin-top:65rpx;margin-left:15rpx" wx:if="{{islogin==true}}">tel:{{phone}}</text>
+	<view class="flex-hor">
+		<view class="colcenter" style="height:100%">
+			<button class="cu-btn btn1 bg-white rowcenter" style="justify-content: space-between;" bindtap="history">
+				<view style="width:30%;height:100%;" class="rowcenter">
+					<view class="cuIcon-countdown " style="color:#10aafe;font-size:50rpx"></view>
+					<view style="color:black;font-size:30rpx">历史记录</view>
+				</view>
+				<view style="width:10% ;height:100%" class="cuIcon-right colcenter"></view>
+			</button>
+			<button class="cu-btn btn1 bg-white rowcenter" style="justify-content: space-between;" bindtap="personinfo">
+				<view style="width:30%;height:100%;" class="rowcenter">
+					<view class="cuIcon-edit " style="color:#10aafe;font-size:45rpx"></view>
+					<view style="color:black;font-size:30rpx">个人设置</view>
+				</view>
+				<view style="width:10% ;height:100%" class="cuIcon-right colcenter"></view>
+			</button>
+			<button class="cu-btn btn1 bg-white rowcenter" style="justify-content: space-between;" bindtap="question">
+				<view style="width:30%;height:100%;" class="rowcenter">
+					<view class="cuIcon-comment " style="color:#10aafe;font-size:45rpx"></view>
+					<view style="color:black;font-size:30rpx">问题反馈</view>
+				</view>
+				<view style="width:10% ;height:100%" class="cuIcon-right colcenter"></view>
+			</button>
+			<button class="cu-btn btn1 bg-white rowcenter" style="justify-content: space-between;" bindtap="program">
+				<view style="width:30%;height:100%;" class="rowcenter">
+					<view class="cuIcon-info " style="color:#10aafe;font-size:45rpx"></view>
+					<view style="color:black;font-size:30rpx">关于我们</view>
+				</view>
+				<view style="width:10% ;height:100%" class="cuIcon-right colcenter"></view>
+			</button>
+		</view>
+	</view>
+</view>

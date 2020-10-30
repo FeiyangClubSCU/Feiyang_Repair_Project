@@ -1,0 +1,23 @@
+<view class="garybc">
+	<view class="whitecard1">
+		<van-toast id="van-toast" />
+		<form style="width:100%">
+			<view class="cu-form-group "  style="justify-content: start;" >
+				<view class="title">头像</view>
+				<view class="cu-avatar round bg-gray " bindtap="upload" style="background-image:url({{img}});" wx:if="{{txtp!=0}}"></view>
+								<view class="cu-avatar round bg-gray cuIcon-cameraadd" bindtap="upload" wx:else></view>
+			</view>
+			<view class="cu-form-group ">
+				<view class="title">姓名</view>
+				<input value="{{name}}" bindinput="getname" placeholder="请输入姓名"></input>
+			</view>
+
+			<view class="cu-form-group">
+				<view class="title">邮箱</view>
+				<input value="{{email}}" bindinput="getemail" placeholder="请输入邮箱"></input>
+			</view>
+		</form>
+		<button class="cu-btn btn bg-blue  margin-top" bindtap="submit">提交</button>
+		<button class="cu-btn btn bg-red" bindtap="logout" style="margin-top:5px">退出账号</button>
+	</view>
+</view>

@@ -1,0 +1,156 @@
+/* pages/about/about.wxss */
+page {
+  background-color: #FFFFFF;
+}
+
+.flex-hor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 460rpx;
+  width: 700rpx;
+  margin-bottom: 25rpx;
+  margin-left: 25rpx;
+  /* height: 470rpx; */
+  overflow: hidden;
+  border-radius: 8px;
+
+}
+
+.top {
+  position: absolute;
+  top: 130rpx;
+  height: 300rpx;
+  width: 100%;
+  background: #00A5FF;
+  padding-top: 15px;
+  position: relative;
+}
+
+.wave2 {
+  width: 100%;
+  z-index: 99;
+  mix-blend-mode: screen;
+  height: 200rpx;
+  position: absolute;
+  bottom: 0;
+
+}
+
+
+
+
+.whitecard1 {
+  display: flex;
+  flex-direction: column;
+  padding: 14rpx 24rpx;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 100rpx;
+  width: 700rpx;
+  height: 250rpx;
+  left: 25rpx;
+  background: #FFFFFF;
+  /* 
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25); */
+  border-radius: 8px;
+}
+.circle{
+  border-radius: 50%;
+  width:180rpx ;
+  height: 180rpx;
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+  background-color: white;
+  opacity: 0.2;
+
+
+}
+/* .tag1{
+
+  position: absolute;
+  right: 100rpx;
+  top: 50rpx;
+} */
+.name_tel{
+  position: absolute;
+  top: 60rpx;
+  left: 70rpx;
+}
+.tel{
+  position: absolute;
+  top: 100rpx;
+  left: 70rpx;
+
+
+
+}
+
+.card {
+  width: 320rpx;
+  height: 320rpx;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+}
+
+.tag {
+  box-shadow: 0rpx 0rpx 30rpx rgba(63, 245, 132, 0.89);
+  color: #81f581;
+}
+
+.tec1 {
+  text-align: justify;
+  /* box-shadow: 0rpx 0rpx 30rpx rgba(248, 229, 59, 0.89); */
+  color: #FFFFFF;
+
+}
+
+.commen {
+  box-shadow: 0px 0px 30rpx rgba(218, 151, 52, 0.22);
+  color: #f1f2f6;
+}
+
+.edit {
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+  font-size: 60rpx;
+}
+
+.btn1 {
+  width: 700rpx;
+  height: 130rpx;
+  background: #FFFFFF;
+  /* box-sizing: border-box;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25); */
+  /* border-radius: 14px; */
+}
+
+.text {
+  font-family: SimHei;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.49);
+}
+
+.image {
+  position: absolute;
+  top: 50rpx;
+  right: 50rpx;
+  overflow: hidden;
+  width: 160rpx;
+  height: 160rpx;
+
+  z-index: 1;
+  border-radius: 50%;
+
+}

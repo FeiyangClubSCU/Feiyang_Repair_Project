@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-skeleton": "../../dist/skeleton/index"
+  },
+  "navigationBarTitleText": "历史记录",
+  "enablePullDownRefresh":true,
+  "backgroundTextStyle": "dark"
+}

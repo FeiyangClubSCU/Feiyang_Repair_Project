@@ -1,0 +1,75 @@
+<!--pages/searchdetail/searchdetail.wxml-->
+<view class="garybc">
+	<menu></menu>
+	<view class="bluecard" style="height:170rpx">
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_2.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_1.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_3.png" mode="widthFix" class="wave1"></image>
+		</view>
+	</view>
+
+	<van-skeleton row="1" row-width="60%" loading="{{loading}}">
+		<view class="cu-bar  whitecard_searchdetail ">
+			<view style="color:white;width:100%;" class="rowcenter"><text class="blackfont2" style="color:white;width:70%;text-align:left">{{wzbt}}</text>
+				<!-- <view><button class="cuIcon-write cu-btn bg-blue text-white round" data-question='{{item.wzbt}}' data-ssid="{{item.ssid}}" bindtap="answer">写回答</button></view> -->
+			</view>
+		</view>
+	</van-skeleton>
+
+
+	<van-skeleton avatar title row="3" avatar-size="32px" loading="{{loading}}">
+	</van-skeleton>
+
+	<van-skeleton avatar title row="7" avatar-size="32px" loading="{{loading}}">
+	</van-skeleton>
+
+	<van-skeleton avatar title row="5" avatar-size="32px" loading="{{loading}}">
+	</van-skeleton>
+
+	<view hidden="{{isShow}}">
+		<view class="colcenter list" wx:for="{{answers}}">
+			<view class="colcenter listcard ">
+				<view class="card colstart" style="width:100%;">
+					<view class="rowstart" style="width:100%;">
+					</view>
+					<view class="rowstart" style="width:100%;height:60rpx">
+						<view class=" rowcenter" style="height:110rpx;width:110rpx;">
+							<image mode="aspectFill" style="width:100%;height:100%" src="{{item.txtp}}"></image>
+						</view>
+
+						<view class="colcenter" style="height:110rpx;margin-left:25rpx">
+							<view class="rowstart">
+								<view class="cu-tag round bg-yellow tec " style="width:100rpx;height:30rpx;margin-right:25rpx" wx:if="{{item.fixs == '1'}}">技术员</view>
+								<view class="cu-tag round bg-cyan" style="width:100rpx;height:30rpx;margin-right:25rpx" wx:elif="{{item.fixs == '0'}}">用户</view>
+
+								<view class=" text-black text-bold" style="font-size:40rpx">{{item.name}}</view>
+							</view>
+							<text class="cardtime grayfont2">{{item.date}}</text>
+						</view>
+					</view>
+					<view class="textarea">
+						<text style="font-size: 30rpx;line-height: 40rpx;" >{{item.text}}</text>
+					</view>
+				</view>
+				<view class="bottomcard rowcenter">
+					<view class="bottom-card-lable solids-right colcenter" style="  width: 60%;">
+						<view style="font-size:35rpx">{{ssids[item.ssid]['approve']}}人</view>
+						<view class="grayfont2" style="font-size:20rpx">觉得很有用</view>
+					</view>
+					<view class="bottom-card-lable colcenter" style="  width: 20%;">
+						<button class="cuIcon-appreciate cu-btn " style="font-size:40rpx;background:#FFFFFF" data-ssid="{{item.ssid}}" disabled="{{ssids[item.ssid]['disable']}}" bindtap="approve"></button>
+					</view>
+					<view class="bottom-card-lable colcenter" style="  width: 20%;">
+						<button open-type="share" class="cuIcon-forward cu-btn" style="font-size:40rpx;background:#FFFFFF"></button>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+</view>

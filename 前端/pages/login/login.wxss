@@ -1,0 +1,64 @@
+.loginfont {
+  font-family: 苹方;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 55rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-top: 25rpx;
+  width: 90%;
+  color: #000000;
+  z-index: 3;
+}
+
+.blueblock {
+  height: 15rpx;
+  width: 245rpx;
+  background: #1e90ff;
+  position: absolute;
+  top: 95rpx;
+  left: 0rpx;
+  z-index: 0;
+
+}
+
+.whitecard1 {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 20rpx;
+  justify-content: start;
+  align-items: center;
+  position: absolute;
+  /* left: 25rpx; */
+  /* top: 150rpx;
+  left: 25rpx; */
+  width: 750rpx;
+  /* height: 980rpx; */
+  height: 100vh;
+  background: #FFFFFF;
+  /* border-radius: 15px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25); */
+
+}
+
+.telnum {
+  width: 500rpx;
+  height: 76rpx;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #f1f2f6;
+  /* border: 2px solid #E5E5E5; */
+  box-sizing: border-box;
+
+}
+
+.varityblock {
+  border-radius: 20px;
+  background: #f1f2f6;
+  width: 500rpx;
+  height: 86rpx;
+  /* border: 2px solid #E5E5E5;
+  box-sizing: border-box; */
+  padding: 5rpx 15rpx;
+}

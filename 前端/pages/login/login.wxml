@@ -1,0 +1,42 @@
+<view class="garybc">
+	<!-- <view class="bluecard" style="height:170rpx">
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_2.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_1.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_3.png" mode="widthFix" class="wave1"></image>
+		</view>
+
+	</view> -->
+	<view class="whitecard1" >
+		<view class="colcenter" style="height:90%;width:100%">
+			<!-- <view class="blueblock"></view> -->
+			<view class="loginfont">Hi,欢迎登录~</view>
+			<view style="width:550rpx;">
+				<image src="https://fix.fyscu.com/api/images/weixins/undraw_remote_design_team_0hp4.png" mode="widthFix"></image>
+			</view>
+
+			<view class="cu-form-group">
+				<van-toast id="van-toast" />
+				<view  class="varityblock rowcenter">
+						<view class="cuIcon-phone text-bold" style="font-size:40rpx;margin-left:10rpx;margin-right:20rpx"></view>
+					<input placeholder="手机号" type='text' class="text-bold" bindinput="loginGetPnumValue" value="{{loginDataPnum}}"></input>
+				</view>
+			</view>
+			<view class="varityblock rowcenter" style="  justify-content: space-between">
+				<view class="cuIcon-safe text-bold" style="font-size:40rpx;margin-left:10rpx;margin-right:20rpx"></view>
+				<input class="" placeholder="验证码" class="text-bold" bindinput="loginGetCodeValue" value="{{loginDataCode}}" style="text-align:left;;"></input>
+				<button class="cu-btn text-blue text-bold" style="width:250rpx;height:80%;border-radius: 15px;background-color:#ffffff;" bindtap="loginGetCodeBotto" disabled="{{disabled}}">{{loginNameCode}}</button>
+			</view>
+
+			<button class="cu-btn buttoncommon " style="width:500rpx;height:82rpx;font-size:36rpx; border-radius:20px;margin-top:15rpx" bindtap="loginGetCodeCheck">登录</button>
+
+			<view class="text-blue" bindtap="toKnow">登录即代表我已阅读并同意《用户须知》</view>
+		</view>
+
+	</view>
+
+</view>

@@ -1,0 +1,36 @@
+<view class="garybc">
+	<view class="bluecard" style="height:170rpx">
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_2.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_1.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_3.png" mode="widthFix" class="wave1"></image>
+		</view>
+	</view>
+
+	<!-- 白色卡片 -->
+	<view class="whitecard" style="height:1000rpx" >
+		<!-- <view class="fixicon">
+			<image src="https://fix.fyscu.com/api/images/weixins/fix.png" mode="widthFix"></image>
+		</view> -->
+		<view class="trancard colcenter">
+			<text class="grayfont1" style="height:10%">维修须知</text>
+			<view style="height:90%;margin-top:25rpx" class="colstart">
+				<text class="text">1、登录后请先修改自己的个人信息以方便后续送修维修处理。\n</text>
+				<text class="text">2、送修前请移除电源外其余外设配件，包括鼠标、接收器、U盘、内存卡等。\n</text>
+				<text class="text">3、如要更换配件，请提前购买准备好；如需重装系统，请确保电脑电量充足。\n</text>
+				<text class="text">4、送修前请备份好数据，我们不对数据丢失负责。\n</text>
+				<text class="text">5、请将问题尽量描述清楚或提前与维修人员联系说明清楚情况。\n</text>
+				<text class="text">6、我们也不是万能的，不保证一定能修好，还请理解。</text>
+				<!-- {{startNoticeText}} -->
+				
+				
+			</view>
+		</view>
+		<!-- <view class="grayfont2">继续代表你已仔细阅读并同意以上内容</view>
+		<button class="cu-btn buttoncommon "  style="width:450rpx" bindtap="startGetStatus">继续</button> -->
+	</view>
+</view>

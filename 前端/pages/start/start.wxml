@@ -1,0 +1,11 @@
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+	<view class='text-center margin-bottom text-lg  text-blod'>维修须知</view>
+	<view class='text-content'>
+		<view class='margin-top-sm'>1、登录后请先修改自己的个人信息以方便后续送修维修处理。\n</view>
+		<view class='margin-top-sm'>2、送修前请移除电源外其余外设配件，包括鼠标、接收器、U盘、内存卡等。\n</view>
+		<view class='margin-top-sm'>3、如要更换配件，请提前购买准备好；如需重装系统，请确保电脑电量充足。\n</view>
+		<view class='margin-top-sm'>4、送修前请备份好数据，我们不对数据丢失负责。\n</view>
+		<view class='margin-top-sm'>5、请将问题尽量描述清楚或提前与维修人员联系说明清楚情况。\n</view>
+		<view class='margin-top-sm'>6、我们也不是万能的，不保证一定能修好，还请理解。</view>
+	</view>
+</view>

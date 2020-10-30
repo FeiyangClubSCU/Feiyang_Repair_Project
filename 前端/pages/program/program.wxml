@@ -1,0 +1,70 @@
+﻿<view class="whitecard1">
+	<view class=" margin-top colcenter center" style="width:100%">
+		<view class="blackfont2  text-bold center" style="align-items: center;width:90%;text-align:left;margin-bottom:20rpx">关于小川电脑管家</view>
+	</view>
+
+	<view class="icon_container rowcenter">
+			<image src="https://fix.fyscu.com/admin/img/fyscu.png" mode="widthFix"></image>
+	</view>
+	<view style="width:100%;margin:40rpx" class="text-gray ">
+		小川电脑管家是一款面向全体四川大学学生的个人设备管理维护的微信小程序，同学可以在该小程序上实现个人设备报修、设备问题搜索等功能，我们旨在为大家提供一个完备的个人设备一体化服务系统，让学习和生活变得更便捷高效！
+	</view>
+	<view class="blackfont2  text-bold " style="width:90%;text-align:left;margin-bottom:40rpx">制作团队</view>
+	<view class="rowcenter aw-container">
+
+		<view class="rowcenter">
+			<view style="width:25%">
+				<image src="https://fix.fyscu.com/api/images/weixins/renhaolong.jpg" mode="widthFix"></image>
+			</view>
+			<view style="width:80%;margin-left:40rpx" class="colcenter ">
+				<view style="width:60%;text-align:left;font-size:33rpx" class="blackfont2">皮卡丘</view>
+				<view style="width:60%;text-align:left;font-size:25rpx" class="grayfont2">后端开发</view>
+			</view>
+		</view>
+
+		<view class="rowcenter ">
+			<view style="width:25%">
+				<image src="https://fix.fyscu.com/api/images/weixins/yuwanlin.jpg" mode="widthFix"></image>
+			</view>
+			<view style="width:80%;margin-left:40rpx" class="colcenter ">
+				<view style="width:60%;text-align:left;font-size:33rpx" class="blackfont2">喻婉霖</view>
+				<view style="width:60%;text-align:left;font-size:25rpx" class="grayfont2">功能测试</view>
+			</view>
+		</view>
+
+		<view class="rowcenter ">
+			<view style="width:25%">
+				<image src="https://fix.fyscu.com/api/images/weixins/wuyinwei.jpg" mode="widthFix"></image>
+			</view>
+			<view style="width:80%;margin-left:40rpx" class="colcenter ">
+				<view style="width:60%;text-align:left;font-size:33rpx" class="blackfont2">伍胤玮</view>
+				<view style="width:60%;text-align:left;font-size:25rpx" class="grayfont2">前端开发</view>
+			</view>
+		</view>
+
+		<view class="rowcenter ">
+			<view style="width:25%">
+				<image src="https://fix.fyscu.com/api/images/weixins/zhongchenglan.jpg" mode="widthFix"></image>
+			</view>
+			<view style="width:80%;margin-left:40rpx" class="colcenter ">
+				<view style="width:60%;text-align:left;font-size:33rpx" class="blackfont2">钟程澜</view>
+				<view style="width:60%;text-align:left;font-size:25rpx" class="grayfont2">整体设计</view>
+			</view>
+		</view>
+
+	</view>
+
+
+
+	<view class="rowcenter " style="width:80%;margin-bottom:40rpx">
+		<view style="">
+			<view class="blackfont2" style="font-size:30rpx">小川电脑管家</view>
+			<view class="blackfont2" style="font-size:30rpx">Version 3.0</view>
+				<view class="grayfont2" style="font-size:30rpx">Powered By 飞扬俱乐部研发部</view>
+		</view>
+	</view>
+
+
+
+
+</view>

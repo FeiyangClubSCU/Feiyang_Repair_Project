@@ -1,0 +1,108 @@
+/* pages/history/history.wxss */
+page{
+  background: #f5f6fa;
+}
+.bottomicon{
+width: 100%;
+
+}
+.whitecard1 {
+  display: flex;
+  flex-direction: column;
+  padding: 24rpx 14rpx;
+  justify-content: start;
+  align-items: center;
+  position: absolute;
+  top: 90rpx;
+  width: 750rpx;
+  min-height: 100vh;
+  background: #f5f6fa;
+  border-radius: 25px;
+}
+
+.list {
+  margin-top: 15rpx;
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  height: 95%;
+  border-radius: 15px 15px 0 0;
+  background: #FFFFFF;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.22); */
+}
+
+.btn {
+  background: linear-gradient(90deg, #4791FA 7.73%, rgba(20, 206, 247, 0.67) 115%), #FFFFFF;
+  border-radius: 25px;
+  border: 1px solid #26E4CE;
+  box-sizing: border-box;
+  font-family: SimHei;
+  height: 75rpx;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36rpx;
+  line-height: 42rpx;
+  text-align: center;
+  color: #FFFFFF;
+  /* box-shadow: 0px 0px 10px rgba(88, 208, 249, 0.39); */
+}
+.text{
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn1 {
+  height: 75rpx;
+  background: #dfe4ea;
+  border-radius: 25px;
+  font-family: SimHei;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36rpx;
+  line-height: 42rpx;
+  text-align: center;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25); */
+  color: rgba(0, 0, 0, 0.49);
+}
+
+.listcard {
+  width: 100%;
+  height: 300rpx;
+  margin-top: 15rpx;
+  padding-bottom: 10rpx;
+  background: #FFFFFF;
+  border-radius: 15px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+}
+.order_status{
+  position: absolute;
+  top: 10rpx;
+  
+
+
+}
+
+
+.tag{
+  width: 150rpx;
+}
+
+.itemcard {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 650rpx;
+  height: 480rpx;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  border-radius: 14px;
+}

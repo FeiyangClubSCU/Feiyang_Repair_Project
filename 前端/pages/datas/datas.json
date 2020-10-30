@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-skeleton": "../../dist/skeleton/index",
+    "van-steps": "../../dist/steps/index"
+  },
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh":true,
+  "backgroundTextStyle": "dark"
+}

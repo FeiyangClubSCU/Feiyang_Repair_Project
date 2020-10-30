@@ -1,0 +1,41 @@
+/* pages/question/question.wxss */
+.btn {
+  width: 93%;
+  height: 70rpx;
+  font-family: SimHei;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.whitecard1{
+  display: flex;
+  flex-direction: column;
+  padding: 3rpx 3rpx;
+  justify-content: space-around;
+  align-items: center;
+  
+  position: absolute;
+
+  top: 40rpx;
+  left: 10rpx;
+  width: 730rpx;
+  height: 630rpx;
+  
+  background: #FFFFFF;
+  /* border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  border-radius: 4px;
+  }
+
+.inputarea {
+  width: 100%;
+  font-size: 15px;
+  height: 380rpx;
+  border: 2px solid #f1f2f6;
+  padding: 25rpx 35rpx 25rpx 35rpx ;
+  border-radius:  4px;
+}

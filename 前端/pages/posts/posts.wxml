@@ -1,0 +1,107 @@
+<view class="cu-modal {{disShow==true?'show':''}}">
+	<view class="cu-dialog">
+		<view class="cu-bar bg-white justify-end">
+			<view class="content">确定要提交吗？</view>
+			<view class="action" bindtap="hidebtn">
+				<text class="cuIcon-close text-red"></text>
+			</view>
+		</view>
+		<!-- <view class="padding-xl">
+            Modal 内容。
+        </view> -->
+		<view class="cu-bar bg-white justify-end">
+			<view class="action">
+				<button class="cu-btn round line-blue text-blue" bindtap="postsBottonHidebtn">取消</button>
+				<button class="cu-btn round bg-blue margin-left" bindtap="postsBottonConfirm">确定</button>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="garybc">
+	<view class="bluecard" style="height:170rpx">
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_2.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_1.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_3.png" mode="widthFix" class="wave1"></image>
+		</view>
+	</view>
+
+	<!-- 白色卡片 -->
+	<view class="whitecard1">
+		<view class="fyicon">
+			<image src="https://fix.fyscu.com/api/images/weixins/fix.png" mode="widthFix"></image>
+		</view>
+		<!-- 以下是输入框 -->
+		<van-toast id="van-toast" />
+		<view class="cu-form-group inputarea">
+			<input value="{{putQQid}}" bindinput="getPutQQid" placeholder="QQ号码 "></input>
+		</view>
+		<view class="cu-form-group inputarea">
+			<view style="text-align:center">校区</view>
+			<picker bindchange="PickerChange" value="{{campusSelt}}" range="{{campusType}}" id="campus" style="font-size:50rpx">
+				<view class="picker">
+					{{campusSelt?campusType[campusSelt]:'请选择'}}
+				</view>
+			</picker>
+		</view>
+		<view class="cu-form-group inputarea">
+			<view style="text-align:center">设备类型</view>
+			<picker bindchange="PickerChange" value="{{tolSelt}}" range="{{tolType}}" id="tolType" style="font-size:50rpx">
+				<view class="picker">
+					{{tolSelt?tolType[tolSelt]:'请选择'}}
+				</view>
+			</picker>
+		</view>
+		<view class="cu-form-group inputarea">
+			<view style="text-align:center">设备品牌</view>
+			<picker bindchange="PickerChange" value="{{devSelt}}" range="{{devType}}" id="devType" style="font-size:50rpx">
+				<view class="picker">
+					{{devSelt?devType[devSelt]:'请选择'}}
+				</view>
+			</picker>
+		</view>
+		<view class="cu-form-group inputarea">
+			<view style="text-align:center">保修状态</view>
+			<picker bindchange="PickerChange" value="{{insSelt}}" range="{{insType}}" id="insType" style="font-size:50rpx">
+				<view class="picker">
+					{{insSelt?insType[insSelt]:'请选择'}}
+				</view>
+			</picker>
+		</view>
+		<view class="cu-form-group inputarea">
+			<view style="text-align:center">设备问题</view>
+			<picker bindchange="PickerChange" value="{{fixSelt}}" range="{{fixType}}" id="fixType" style="font-size:50rpx">
+				<view class="picker">
+					{{fixSelt?fixType[fixSelt]:'请选择'}}
+				</view>
+			</picker>
+		</view>
+		<view class="cu-form-group inputarea">
+			<view style="text-align:center">购买日期</view>
+			<picker bindchange="PickerChange" mode="date" value="{{buyDate}}" start="2000-09-01" end="{{today}}" id="dateType" style="font-size:50rpx">
+				<view class="picker">
+					{{buyDate}}
+				</view>
+			</picker>
+		</view>
+		<view class="cu-form-group inputarea">
+			<input value="{{xinghao}}" bindinput="getXinghao" placeholder="设备型号"></input>
+		</view>
+		<!-- 文本框 -->
+		<view class="cu-form-group  inputarea">
+			<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="getDetails" value="{{Details}}" placeholder="设备问题"></textarea>
+			<view>
+			</view>
+		</view>
+		<!-- 图片上传器 -->
+		<view style="width:100%">
+			<van-uploader max-count="1" eletable="{{ false }}" upload-text="选择图片" file-list="{{ fileList }}" bind:after-read="postsPicturesReads" style="float:left" />
+		</view>
+		<button class="cu-btn btn bg-blue" bindtap="submit">提交</button>
+	</view>
+</view>

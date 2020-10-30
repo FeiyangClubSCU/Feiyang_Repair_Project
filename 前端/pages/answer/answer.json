@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-skeleton": "../../dist/skeleton/index"
+  },
+  "navigationBarTitleText": "我来回答",
+  "enablePullDownRefresh":true,
+  "backgroundTextStyle": "dark"
+}

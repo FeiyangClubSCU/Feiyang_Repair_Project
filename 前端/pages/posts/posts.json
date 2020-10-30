@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-uploader": "../../dist/uploader/index",
+    "van-toast":"../../dist/toast/index"
+  },
+  "navigationBarTitleText": "报修信息"
+}

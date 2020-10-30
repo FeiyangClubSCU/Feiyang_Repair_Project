@@ -1,0 +1,49 @@
+/* pages/fixform/fixform.wxss */
+.whitecard1 {
+  display: flex;
+  flex-direction: column;
+  padding: 44rpx 62rpx;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 100rpx;
+  width: 750rpx;
+  height: 1900rpx;
+  background: #FFFFFF;
+  border-radius: 25px 25px 0 0;
+}
+
+.fyicon {
+  width: 40%;
+}
+
+.inputarea {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 7px;
+  border: 1px solid rgba(179, 177, 177, 0.33);
+  box-sizing: border-box;
+}
+
+.btn {
+  width: 99%;
+  height: 70rpx;
+  font-family: SimHei;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.imgblock {
+  display: flex;
+  flex-direction: row;
+  justify-content:start;
+  align-items: center;
+  width: 100%;
+  border-radius: 7px;
+  border: 1px solid rgba(179, 177, 177, 0.33);
+  box-sizing: border-box;
+}

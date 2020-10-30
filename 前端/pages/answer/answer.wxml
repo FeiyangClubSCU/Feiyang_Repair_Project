@@ -1,0 +1,65 @@
+<!--pages/answer/answer.wxml-->
+<view class="garybc">
+	<menu></menu>
+	<view class="backgroundcard" wx:if="{{isShow.length==0}}"></view>
+
+	<van-skeleton avatar title row="2" avatar-size="32px" loading="{{loading}}">
+	</van-skeleton>
+
+	<van-skeleton avatar title row="2" avatar-size="32px" loading="{{loading}}">
+	</van-skeleton>
+
+	<van-skeleton avatar title row="2" avatar-size="32px" loading="{{loading}}">
+	</van-skeleton>
+
+	<van-skeleton avatar title row="2" avatar-size="32px" loading="{{loading}}">
+	</van-skeleton>
+
+	<van-skeleton avatar title row="2" avatar-size="32px" loading="{{loading}}">
+	</van-skeleton>
+
+	<!-- 白色卡片 -->
+	<block wx:if="{{quesitons.length>0}}">
+		<view hidden="{{isShow}}">
+			<view class="colcenter list" wx:for="{{quesitons}}">
+				<view class="colstart listcard ">
+					<view class="card rowcenter" style="width:100%;">
+						<!-- <view style="width:95%">
+							<view class="rowstart">
+								<view style="border-radius:50%;overflow: hidden;height:90rpx;width:90rpx;" class="rowcenter">
+									<image mode="aspectFill" style="width:100%;height:100%" src="{{item.txtp}}"></image>
+								</view>
+								<view class="colcenter" style="height:90rpx;margin-left:25rpx;">
+									<view class="rowstart" style="width:100%">
+										<view class="cu-tag round bg-yellow tec " style="width:100rpx;height:30rpx;margin-right:25rpx" wx:if="{{item.fixs == 1}}">技术员</view>
+										<view class="cu-tag round bg-cyan" style="width:100rpx;height:30rpx;margin-right:25rpx" wx:elif="{{item.fixs == 0}}">用户</view>
+										<view class="grayfont2">{{item.name}}</view>
+
+									</view>
+									<text class="cardtime" class="text-gray">{{item.date}}</text>
+
+
+								</view>
+								<view style="width:20%;height:100rpx;" class=" colcenter">
+									<button class="cuIcon-write cu-btn round line-blue answer-btn" style=";background:#FFFFFF" data-ssid="{{item.ssid}}" data-question="{{item.wzbt}}" bindtap="writeanswer">回答</button>
+								</view>
+							</view>
+						</view> -->
+						<view style="width:90%;" class="rowcenter">
+							<text class="blackfont2 " style="font-size:40rpx;width:100%;text-align:left;">{{item.wzbt}}</text>
+	<button class="cuIcon-write cu-btn round line-blue answer-btn" style=";background:#FFFFFF" data-ssid="{{item.ssid}}" data-question="{{item.wzbt}}" bindtap="writeanswer">回答</button>
+						</view>
+
+
+
+					</view>
+				</view>
+			</view>
+		</view>
+	</block>
+	<block wx:else>
+		<view class="aw-text">
+			暂时没有待回答的问题噢
+		</view>
+	</block>
+</view>

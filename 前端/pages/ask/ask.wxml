@@ -1,0 +1,9 @@
+<!--pages/ask/ask.wxml-->
+<view class="garybc">
+	<view class="backgroundcard"></view>
+    <view class="whitecard1">
+			<van-toast id="van-toast"/>
+			<textarea class="inputarea" bindinput="getquestion" value="{{question}}" placeholder="请写下你的问题，准确地描述问题更容易得到解答" placeholder-style="font-size:15px" style="width:95%;font-size:15px" maxlength="46" show-confirm-bar="false"></textarea>
+			<button class="cu-btn btn bg-blue " bindtap="ask_1">提问</button>
+	</view>
+</view>

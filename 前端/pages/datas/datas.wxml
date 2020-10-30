@@ -1,0 +1,307 @@
+<view class="cu-modal {{isShow==true?'show':''}}">
+	<view class="cu-dialog">
+		<view class="cu-bar bg-white justify-end">
+			<view class="content">{{tip}}</view>
+			<view class="action" bindtap="hidebtn">
+				<text class="cuIcon-close text-red"></text>
+			</view>
+		</view>
+		<view class='margin-sm bg-white radius shadow-lg'>
+			<view class='text-center margin-bottom text-lg  text-blod'>维修须知</view>
+			<view class='text-content'>
+				<view class='margin-top-sm'>1、登录后请先修改自己的个人信息以方便后续送修维修处理。\n</view>
+				<view class='margin-top-sm'>2、送修前请移除电源外其余外设配件，包括鼠标、接收器、U盘、内存卡等。\n</view>
+				<view class='margin-top-sm'>3、如要更换配件，请提前购买准备好；如需重装系统，请确保电脑电量充足。\n</view>
+				<view class='margin-top-sm'>4、送修前请备份好数据，我们不对数据丢失负责。\n</view>
+				<view class='margin-top-sm'>5、请将问题尽量描述清楚或提前与维修人员联系说明清楚情况。\n</view>
+				<view class='margin-top-sm'>6、我们也不是万能的，不保证一定能修好，还请理解。</view>
+			</view>
+		</view>
+		<view class="cu-bar bg-white justify-end">
+			<view class="action">
+				<button class="cu-btn round line-blue text-blue" bindtap="hidebtn">取消</button>
+				<button class="cu-btn round bg-blue margin-left" bindtap="confirm">确定</button>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- 技术员登录 -->
+<view wx:if="{{isuser == '0'}}">
+	<!-- 空闲状态 -->
+	<view wx:if="{{status == '0'}}">
+		<view class="bluecard" style="height:170rpx">
+			<view>
+				<image src="https://fix.fyscu.com/api/images/weixins/wave_2.png" mode="widthFix" class="wave"></image>
+			</view>
+			<view>
+				<image src="https://fix.fyscu.com/api/images/weixins/wave_1.png" mode="widthFix" class="wave"></image>
+			</view>
+			<view>
+				<image src="https://fix.fyscu.com/api/images/weixins/wave_3.png" mode="widthFix" class="wave1"></image>
+			</view>
+		</view>
+		<!-- <view class="backgroundcard"></view> -->
+		<view class="userempty_whitecard">
+			<view class="blackfont1" style="font-size:50rpx">目前没有正在维修的订单噢~</view>
+			<view>
+				<image src="https://fix.fyscu.com/api/images/weixins/empty.png"></image>
+			</view>
+			<button class="cu-btn buttoncommon button-hover" style="width:600rpx;height:70rpx" bindtap="option">设置</button>
+		</view>
+	</view>
+	<!-- 已接单状态 -->
+	<view wx:if="{{status == '1'}}">
+		<view class="garybc">
+			<view class="bluecard" style="height:170rpx">
+				<view>
+					<image src="https://fix.fyscu.com/api/images/weixins/wave_2.png" mode="widthFix" class="wave"></image>
+				</view>
+				<view>
+					<image src="https://fix.fyscu.com/api/images/weixins/wave_1.png" mode="widthFix" class="wave"></image>
+				</view>
+				<view>
+					<image src="https://fix.fyscu.com/api/images/weixins/wave_3.png" mode="widthFix" class="wave1"></image>
+				</view>
+			</view>
+			<!-- <view class="backgroundcard"></view> -->
+			<!-- 白色卡片 -->
+			<view class="fixing_whitecard">
+				<!-- 技术员面板 -->
+
+				<view style="position:absolute;top:30rpx;left:30rpx;width:100rpx;" class="cu-tag round bg-cyan">
+					用户
+				</view>
+				<view class="fixericon1 rowcenter">
+					<image class="fixericon" src="{{infTxtp}}"></image>
+				</view>
+				<view class="colcenter;" style="width:90%;justify-content: space-between;margin-top:90rpx">
+					<view class="fixerName text-blue light" style="">{{infName}}</view>
+					<view class="text-gray " style="width:100%;height:35rpx;margin:15rpx;text-align:center">请尽快联系我噢~</view>
+				</view>
+
+				<view class="connectionbox  solids-top" style="height:80rpx;">
+					<view style="width:50%;height:100%; " class="solids-right rowcenter" bindtap="copy" data-text="{{infQQid}}">
+						<view class="rowcenter">
+							<image src="https://fix.fyscu.com/api/images/weixins/qq.png" style="width:40rpx;margin-right:20rpx" mode="widthFix"></image>
+							<view class="text-blue ">复制qq</view>
+						</view>
+					</view>
+					<view style="width:50%;height:100%; " class="rowcenter" bindtap="copy" data-text="{{infPnum}}">
+						<view class="rowcenter">
+							<image src="https://fix.fyscu.com/api/images/weixins/shouji.png" style="width:37rpx;margin-right:20rpx" mode="widthFix"></image>
+							<view class="text-blue">复制手机</view>
+						</view>
+					</view>
+
+				</view>
+			</view>
+			<view class=" threePanel">
+				<view class="panel colcenter" style=" height: 650rpx;">
+					<view style="width:100%;height:15%;margin-bottom:30rpx" class="blackfont2;solids-bottom;rowcenter">
+						<view style="width:60%;text-align:left;font-size:40rpx">订单信息</view>
+						<view style="width:40%;text-align:right;font-size:40rpx" bindtap="detail" class="cuIcon-right text-gray"></view>
+					</view>
+					<view style="width:100%;height:80%" class="colcenter">
+						<view style="width:100%;margin-bottom:10rpx" class="rowcenter">
+							<view style="width:35%" class="text-gray">设备类型</view>
+							<view style="width:55%;text-align:right">{{infSblx}}</view>
+						</view>
+						<view style="width:100%;margin-bottom:10rpx" class="rowcenter">
+							<view style="width:35%" class="text-gray">型号</view>
+							<view style="width:55%;text-align:right">{{infDnxh}}</view>
+						</view>
+						<view style="width:100%;margin-bottom:10rpx" class="rowcenter">
+							<view style="width:35%" class="text-gray">品牌</view>
+							<view style="width:55%;text-align:right">{{infDnpp}}</view>
+						</view>
+						<view style="width:100%;margin-bottom:10rpx;margin-bottom:10rpx" class="rowcenter">
+							<view style="width:35%" class="text-gray">购买日期</view>
+							<view style="width:55%;text-align:right">{{infGmsj}}</view>
+						</view>
+						<view style="width:100%;margin-bottom:10rpx" class="rowcenter">
+							<view style="width:35%" class="text-gray">保修状态</view>
+							<view style="width:55%;text-align:right">{{infBxzt}}</view>
+						</view>
+						<view style="width:100%;align-items:start;margin-bottom:10rpx" class="rowcenter">
+							<view style="width:35%" class="text-gray">设备问题</view>
+							<view style="width:55%;text-align:justify;" class="textoverflow">{{infWxsm}}</view>
+						</view>
+					</view>
+				</view>
+				<view class="panel">
+					<view style="width:100%;height:15%;text-align:left;font-size:40rpx" class="blackfont2;solids-bottom">
+						维修进度
+					</view>
+					<view style="width:100%;height:80%;margin-top:25rpx" class="rowcenter">
+						<view>
+							<van-steps steps="{{ steps }}" active="{{ active }}" direction="vertical" active-color="#38f" style="width:100%" active="1" />
+						</view>
+						<view style="width:50%">
+							<image src="https://fix.fyscu.com/api/images/weixins/fixtime.png" mode="widthFix"></image>
+						</view>
+					</view>
+				</view>
+				<view class=" bottombtn">
+					<!-- <button class="cu-btn fixing_btn bg-gradual-blue " disabled="{{button_isuse}}" bindtap="indexPutUserChange" data-type="finish">确认维修完成</button> -->
+					<button class="cu-btn fixing_btn bg-red " bindtap="indexPutUserChange" data-type="4">关闭订单 </button>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- 用户登录 -->
+<view wx:if="{{isuser == '1'}}">
+	<!-- 空闲状态 -->
+	<block wx:if="{{status == '0'}}">
+		<view>
+			<view class="bluecard" style="height:170rpx">
+				<view>
+					<image src="https://fix.fyscu.com/api/images/weixins/wave_2.png" mode="widthFix" class="wave"></image>
+				</view>
+				<view>
+					<image src="https://fix.fyscu.com/api/images/weixins/wave_1.png" mode="widthFix" class="wave"></image>
+				</view>
+				<view>
+					<image src="https://fix.fyscu.com/api/images/weixins/wave_3.png" mode="widthFix" class="wave1"></image>
+				</view>
+			</view>
+			<!-- <view class="backgroundcard"></view> -->
+			<view class="userempty_whitecard">
+				<view class="blackfont1" style="font-size:50rpx">目前没有正在维修的订单噢~
+					<!-- <view class="grayfont2" style="font-size:30rpx">线上报修仅限江安校区，其他校区请关注飞扬大修</view> -->
+				</view>
+
+				<view>
+					<image src="https://fix.fyscu.com/api/images/weixins/empty.png"></image>
+				</view>
+				<button class="cu-btn buttoncommon button-hover" style="width:600rpx;height:70rpx" bindtap="indexGetUserRepair">我要报修</button>
+			</view>
+		</view>
+	</block>
+	<!-- 等待技术员接单状态 -->
+	<view wx:if="{{status == '1'}}">
+		<view class="bluecard" style="height:170rpx">
+			<view>
+				<image src="https://fix.fyscu.com/api/images/weixins/wave_2.png" mode="widthFix" class="wave"></image>
+			</view>
+			<view>
+				<image src="https://fix.fyscu.com/api/images/weixins/wave_1.png" mode="widthFix" class="wave"></image>
+			</view>
+			<view>
+				<image src="https://fix.fyscu.com/api/images/weixins/wave_3.png" mode="widthFix" class="wave1"></image>
+			</view>
+		</view>
+		<!-- <view class="backgroundcard"></view> -->
+		<view class="userempty_whitecard">
+			<view class="blackfont1" style="font-size:50rpx">您的报修单正分配中~</view>
+			<view>
+				<image src="https://fix.fyscu.com/api/images/weixins/busy.png"></image>
+			</view>
+			<button class="cu-btn buttoncommon button-hover" style="width:600rpx;height:70rpx" bindtap="detail">查看订单详情</button>
+		</view>
+	</view>
+	<!-- 已被接单状态 -->
+	<block wx:if="{{status == '2'}}">
+		<view>
+			<view class="garybc">
+				<view class="bluecard" style="height:170rpx">
+					<view>
+						<image src="https://fix.fyscu.com/api/images/weixins/wave_2.png" mode="widthFix" class="wave"></image>
+					</view>
+					<view>
+						<image src="https://fix.fyscu.com/api/images/weixins/wave_1.png" mode="widthFix" class="wave"></image>
+					</view>
+					<view>
+						<image src="https://fix.fyscu.com/api/images/weixins/wave_3.png" mode="widthFix" class="wave1"></image>
+					</view>
+				</view>
+				<!-- <view class="backgroundcard"></view> -->
+				<!-- 白色卡片 -->
+				<view class="fixing_whitecard">
+					<!-- 技术员面板 -->
+					<view style="position:absolute;top:30rpx;left:30rpx;" class="cu-tag round bg-yellow tec">
+						技术员
+					</view>
+					<view class="fixericon1 rowcenter">
+						<image class="fixericon" src="{{infTxtp}}"></image>
+					</view>
+					<view class="colcenter;" style="width:90%;justify-content: space-between;margin-top:90rpx">
+						<view class="fixerName text-blue light" style="">{{infName}}</view>
+						<view class="text-gray " style="width:100%;height:35rpx;margin:15rpx;text-align:center">请尽快联系我噢~</view>
+					</view>
+
+					<view class="connectionbox  solids-top" style="height:80rpx;">
+						<view style="width:50%;height:100%; " class="solids-right rowcenter" bindtap="copy" data-text="{{infQQid}}">
+							<view class="rowcenter">
+								<image src="https://fix.fyscu.com/api/images/weixins/qq.png" style="width:40rpx;margin-right:20rpx" mode="widthFix"></image>
+								<view class="text-blue ">复制qq</view>
+							</view>
+						</view>
+						<view style="width:50%;height:100%; " class="rowcenter" bindtap="copy" data-text="{{infPnum}}">
+							<view class="rowcenter">
+								<image src="https://fix.fyscu.com/api/images/weixins/shouji.png" style="width:37rpx;margin-right:20rpx" mode="widthFix"></image>
+								<view class="text-blue">复制手机</view>
+							</view>
+						</view>
+
+					</view>
+				</view>
+				<view class=" threePanel">
+					<view class="panel colcenter" style=" height: 650rpx;">
+						<view style="width:100%;height:15%;margin-bottom:30rpx" class="blackfont2;solids-bottom;rowcenter">
+							<view style="width:60%;text-align:left;font-size:40rpx">订单信息</view>
+							<view style="width:40%;text-align:right;font-size:40rpx" bindtap="detail" class="cuIcon-right text-gray"></view>
+						</view>
+						<view style="width:100%;height:80%" class="colcenter">
+							<view style="width:100%;margin-bottom:10rpx" class="rowcenter">
+								<view style="width:35%" class="text-gray">设备类型</view>
+								<view style="width:55%;text-align:right">{{infSblx}}</view>
+							</view>
+							<view style="width:100%;margin-bottom:10rpx" class="rowcenter">
+								<view style="width:35%" class="text-gray">型号</view>
+								<view style="width:55%;text-align:right">{{infDnxh}}</view>
+							</view>
+							<view style="width:100%;margin-bottom:10rpx" class="rowcenter">
+								<view style="width:35%" class="text-gray">品牌</view>
+								<view style="width:55%;text-align:right">{{infDnpp}}</view>
+							</view>
+							<view style="width:100%;margin-bottom:10rpx;margin-bottom:10rpx" class="rowcenter">
+								<view style="width:35%" class="text-gray">购买日期</view>
+								<view style="width:55%;text-align:right">{{infGmsj}}</view>
+							</view>
+							<view style="width:100%;margin-bottom:10rpx" class="rowcenter">
+								<view style="width:35%" class="text-gray">保修状态</view>
+								<view style="width:55%;text-align:right">{{infBxzt}}</view>
+							</view>
+							<view style="width:100%;align-items:start;margin-bottom:10rpx" class="rowcenter">
+								<view style="width:35%" class="text-gray">设备问题</view>
+								<view style="width:55%;text-align:justify;" class="textoverflow">{{infWxsm}}</view>
+							</view>
+						</view>
+					</view>
+					<view class="panel">
+						<view style="width:100%;height:15%;text-align:left;font-size:40rpx" class="blackfont2;solids-bottom">
+							维修进度
+						</view>
+						<view style="width:100%;height:80%;margin-top:25rpx" class="rowcenter">
+							<view>
+								<van-steps steps="{{ steps }}" active="{{ active }}" direction="vertical" active-color="#38f" style="width:100%" active="1" />
+							</view>
+							<view style="width:50%">
+								<image src="https://fix.fyscu.com/api/images/weixins/fixtime.png" mode="widthFix"></image>
+							</view>
+						</view>
+					</view>
+					<view class=" bottombtn">
+						<button class="cu-btn fixing_btn bg-gradual-blue " disabled="{{button_isuse}}" data-type="2" bindtap="indexPutUserChange">确认维修完成</button>
+						<button class="cu-btn fixing_btn bg-red " bindtap="indexPutUserChange" data-type="3">撤销订单 </button>
+					</view>
+				</view>
+			</view>
+		</view>
+
+	</block>
+
+</view>

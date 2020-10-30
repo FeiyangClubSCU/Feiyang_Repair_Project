@@ -1,0 +1,28 @@
+<view class="garybc">
+	<view class="whitecard1">
+		<form style="width:100%">
+			<view class="cu-form-group">
+				<view class="title">下次天数</view>
+				<picker bindchange="PickerChange" value="{{index}}" data-type="next" range="{{day}}">
+					<view class="picker">
+						{{index!==undefined?day[index]:'请选择'}}
+					</view>
+				</picker>
+				<!-- <input value="{{next}}" bindinput="inputchange" data-type = "next" placeholder="请输入下次接单距离天数"></input> -->
+			</view>
+			<!-- <view class="cu-form-group">
+				<view class="title">是否接单</view>
+				<switch checked="{{aval}}" bindchange="inputchange" data-type="aval"></switch>
+			</view> -->
+			<view class="cu-form-group">
+				<view class="title">QQ号使用</view>
+				<switch checked="{{qqky}}" data-type="qqky" bindchange="inputchange"></switch>
+			</view>
+			<view class="cu-form-group">
+				<view class="title">QQ号内容</view>
+				<input value="{{qqid}}" bindinput="inputchange" data-type="qqid" placeholder="请输入QQ号码"></input>
+			</view>
+		</form>
+		<button class="cu-btn btn bg-blue  margin-top" bindtap="submit">提交</button>
+	</view>
+</view>

@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/datas/datas",
+    "pages/program/program",
+
+    "pages/posts/posts",
+
+    "pages/ask/ask",
+    "pages/start/start",
+    "pages/login/login",
+    "pages/about/about",
+  
+    "pages/write/write",
+    "pages/search/search",
+    "pages/upload/upload",
+    "pages/button/button",
+    "pages/detail/detail",
+    "pages/answer/answer",
+ 
+    "pages/setting/setting",
+    "pages/content/content",
+    "pages/history/history"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00A5FF",
+    "navigationBarTitleText": "小川电脑管家",
+    "navigationStyle": "default",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#10aafe",
+    "list": [
+      {
+        "pagePath": "pages/datas/datas",
+        "text": "首页",
+        "iconPath": "/static/images/home_1.png",
+        "selectedIconPath": "/static/images/home.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "/static/images/search_1.png",
+        "selectedIconPath": "/static/images/search.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "我的",
+        "iconPath": "/static/images/user_1.png",
+        "selectedIconPath": "/static/images/user.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-skeleton": "../../dist/skeleton/index",
+    "menu":"../../pages/button/button"
+  },
+  "navigationBarTitleText": "搜索",
+  "enablePullDownRefresh":true,
+  "backgroundTextStyle": "dark"
+}

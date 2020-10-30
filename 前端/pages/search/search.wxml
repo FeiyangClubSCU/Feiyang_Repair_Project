@@ -1,0 +1,57 @@
+<view class="garybc">
+	<menu islogin="{{islogin}}"></menu>
+	<view class="bluecard" style="height:170rpx">
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_2.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_1.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_3.png" mode="widthFix" class="wave1"></image>
+		</view>
+	</view>
+
+	<!-- 白色卡片 -->
+	<view class="whitecard1">
+		<view style="width:90%;  justify-content:space-between;margin-bottom:35rpx" class="rowcenter">
+			<view class="cu-form-group inputarea">
+				<text class="cuIcon-search " style="margin-right:25rpx"></text>
+				<input placeholder="搜索" value="{{keywords}}" data-keywords="" bindinput="inputchange" type="text" placeholder-style="color:#CCCCCC;font-size: 15px;" maxlength="25" confirm-type="search"></input>
+			</view>
+			<button class="cu-btn search-btn " style="background-color:#54a0ff;" bindtap="search">搜索</button>
+		</view>
+		<van-skeleton avatar row="3" avatar-size="50px" loading="{{loading}}">
+		</van-skeleton>
+		<view class="colcenter list" wx:for="{{content}}">
+			<view class="colcenter listcard  ">
+				<view class="card colstart" style="width:100%;">
+					<view class="rowcenter" style="width:100%;height:100%">
+						<view class="solids-right colcenter cardleft">
+							<view class="colcenter">
+								<view class="icon rowcenter">
+									<image mode="aspectFill" style="width:100%;height:100%" src="{{item.txtp}}"></image>
+								</view>
+								<view class="rowcenter" style="width:100%;" wx:if="{{item.fixs == '1'}}">
+									<view class="cu-tag round bg-yellow tec " style="width:100rpx;height:30rpx">技术员</view>
+								</view>
+								<view class="rowcenter" style="width:100%;" wx:elif="{{item.fixs == '0'}}">
+									<view class="cu-tag round bg-cyan" style="width:100rpx;height:30rpx;">用户</view>
+								</view>
+								<view style=";height:25%;font-size:30rpx" class="grayfont1">{{item.name}}</view>
+							</view>
+
+						</view>
+						<view class="colcenter cardright" bindtap="searchdetail" data-ssid="{{item.ssid}}" data-cont="{{item.cont}}">
+							<view style="width:90%;align-items: start;height:40%" class="colcenter">
+								<text class="blackfont2 " style="font-size:38rpx;text-align: left;width:90%">{{item.wzbt}}</text>
+								<text class="blackfont2" style="font-size:25rpx;text-align: left;width:90%">{{item.date}}</text>
+							</view>
+							<text class="grayfont2 textoverflow" style="font-size:30rpx;-webkit-line-clamp:2;text-align: left;width:90%">{{item.text}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,95 @@
+<view class="garybc">
+	<!-- 0-没接单，1-接单，2-用户确认完成，3-用户放弃，4-技术员关闭，5-系统关闭 -->
+	<view class="backgroundcard" >
+		<view class="toptitle" wx:if="{{infFlag =='0'}}">正在为你分配订单~</view>
+		<view class="toptitle" wx:if="{{infFlag =='1'}}">订单进行中</view>
+		<view class="toptitle" wx:if="{{infFlag =='2'}}">订单已完成</view>
+		<view class="toptitle" wx:if="{{infFlag =='3'}}">订单被用户取消</view>
+		<view class="toptitle" wx:if="{{infFlag =='4'}}">订单被技术员取消</view>
+		<view class="toptitle" wx:if="{{infFlag =='5'}}">目前系统已关闭</view>
+	</view>
+	<view class="whitecard1">
+		<view class="panel rowcenter" style="border-radius:7px">
+			<view class="fyicon ">
+				<image src="https://fix.fyscu.com/api/images/weixins/undraw_empty_street_sfxm (1).png" mode="widthFix"></image>
+			</view>
+
+		</view>
+
+		<view class="colcenter panel" style="padding-bottom:25rpx">
+			<view class="cu-form-group inputarea text-black text-bold" style="font-size:35rpx">
+				设备信息
+			</view>
+			<view class="cu-form-group inputarea">
+				<view class="title ">设备类型</view>
+				<view class="text">{{infSblx}}</view>
+			</view>
+			<view class="cu-form-group inputarea">
+				<view class="title ">品牌</view>
+				<view class="text">{{infDnpp}}</view>
+			</view>
+			<view class="cu-form-group inputarea">
+				<view class="title">型号</view>
+				<view class="text">{{infDnxh}}</view>
+			</view>
+			<view class="cu-form-group inputarea">
+				<view class="title ">购买日期</view>
+				<view class="text">{{infGmsj}}</view>
+			</view>
+			<view class="cu-form-group inputarea">
+				<view class="title ">保修状态</view>
+				<view class="text">{{infBxzt}}</view>
+			</view>
+			<view class="cu-form-group inputarea colcenter">
+				<view style="width:100%">
+					<view class="title" style="width:30%">设备问题</view>
+				</view>
+				<block wx:if="{{imgArray.length==0}}">
+					<view class="text1">{{infWxsm}}</view>
+				</block>
+				<block wx:if="{{imgArray.length!=0}}">
+					<view class="text1">{{infWxsm}}</view>
+					<swiper class="swipercontainer" current="0" style="width:80%" indicator-dots="false" duration="500" bindchange="cardSwiper">
+						<swiper-item wx:for="{{imgArray}}" class="rowcenter"  style="border-radius: 10px;">
+							<image src="{{item}}" mode="aspectFit" bindtap='previewImg' data-src="{{item}}" class="img-responsive" data-list="{{imgArray}}" />
+						</swiper-item>
+					</swiper>
+				</block>
+
+			</view>
+		</view>
+		<view class="colcenter panel" wx:if="{{infFlag =='2'||infFlag =='1'}}">
+			<view class="cu-form-group inputarea text-black text-bold" style="font-size:35rpx">
+				用户信息
+			</view>
+			<view class="cu-form-group inputarea">
+				<view class="title ">姓名</view>
+				<view class="text">{{infName}}</view>
+			</view>
+			<view class="cu-form-group inputarea">
+				<view class="title">电话</view>
+				<view class="text solids-right" style="padding-right:35rpx">{{infPnum}}</view>
+				<view class="cu-btn cuIcon-copy copybtn text-blue" bindtap="copy" data-text="{{infPnum}}" style="background: #FFFFFF;"></view>
+			</view>
+			<view class="cu-form-group inputarea">
+				<view class="title">QQ号</view>
+				<view class="text solids-right" style="padding-right:35rpx">{{infQQid}}</view>
+				<view class="cu-btn cuIcon-copy copybtn text-blue" bindtap="copy" data-text="{{infQQid}}" style="background: #FFFFFF;"></view>
+			</view>
+
+		</view>
+		<view class="colcenter panel" wx:if="{{infFlag == 2}}" >
+			<view class="cu-form-group inputarea text-black text-bold" style="font-size:35rpx">
+				订单信息
+			</view>
+			<view class="cu-form-group inputarea">
+				<view class="title ">报修时间</view>
+				<view class="text">{{infTime}}</view>
+			</view>
+			<view class="cu-form-group inputarea">
+				<view class="title ">完成时间</view>
+				<view class="text">{{infWcsj}}</view>
+			</view>
+		</view>
+	</view>
+</view>

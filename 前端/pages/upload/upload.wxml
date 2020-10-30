@@ -1,0 +1,43 @@
+<!--pages/question/question.wxml-->
+<view class="cu-modal {{isShow==true?'show':''}}">
+	<view class="cu-dialog">
+		<view class="cu-bar bg-white justify-end">
+			<view class="content">确定要提交吗？</view>
+			<view class="action" bindtap="hidebtn">
+				<text class="cuIcon-close text-red"></text>
+			</view>
+		</view>
+		<!-- <view class="padding-xl">
+			Modal 内容。
+		</view> -->
+		<view class="cu-bar bg-white justify-end">
+			<view class="action">
+				<van-toast id="van-toast"/>
+				<button class="cu-btn round line-blue text-blue" bindtap="hidebtn">取消</button>
+				<button class="cu-btn round bg-blue margin-left" bindtap="confirm">确定</button>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="garybc">
+	<!-- <view class="bluecard" style="height:170rpx">
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_2.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_1.png" mode="widthFix" class="wave"></image>
+		</view>
+		<view>
+			<image src="https://fix.fyscu.com/api/images/weixins/wave_3.png" mode="widthFix" class="wave1"></image>
+		</view>
+
+	</view> -->
+	<view class="backgroundcard"></view>
+	<view class="whitecard1" style="top:80rpx">
+		<textarea placeholder="请写下你想要反馈的问题" value="{{question}}" bindinput="getquestion" class="inputarea" placeholder-style="font-size:15px" style="width:95%;font-size:15px" maxlength="-1" show-confirm-bar="false"></textarea>
+		<view class="image"> 
+			<image src="https://fix.fyscu.com/api/images/weixins/undraw_feedback_h2ft.png" mode="widthFix" ></image>
+		</view>
+		<button class="cu-btn btn bg-blue " bindtap="return">反馈</button>
+	</view>
+</view>
